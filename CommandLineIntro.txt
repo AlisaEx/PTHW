@@ -1,0 +1,99 @@
+Command line introduction
+from Learning Python the Hard Way
+http://learnpythonthehardway.org/book/appendix-a-cli/ex1.html
+
+LINUX/MAC OS
+-------------------------------
+pwd
+	print working directory
+cd
+	change directory
+ls
+	list directory
+mkdir
+	make directory
+pushd
+	push directory
+rmdir
+	remove directory
+popd
+	pop directory
+cp
+	copy a file or directory
+mv
+	move a file or directory
+less
+	page through a file
+cat
+	print the whole file
+xargs
+	execute arguments
+find
+	find files
+grep
+	find things inside files
+man
+	read manual pages
+apropos
+	find what language is appropriate
+env
+	look at your environment
+echo
+	print some arguments
+export
+	export/set up a new environment variable
+exit
+	exit the shell
+sudo
+	become super root user
+----------------------------------------------------
+
+WINDOWS
+------------------------------------------
+pwd
+	print working directory
+hostname
+	your computer's host name
+mkdir
+	make directory
+cd
+	change directory
+ls
+	list directory
+rmdir
+	remove directory
+pushd
+	push directory
+popd
+	pop directory
+cp
+	copy file or directory
+robocopy
+	robust copy
+mv
+	move file or directory
+more
+	page through a file
+type
+	print the whole file
+forfiles
+	run a command on multiple files
+dir -r
+	find files
+select-string
+	find things inside select files
+help
+	read a manual page
+helpctr
+	find what manual page is appropriate
+echo
+	print some arguments
+set
+	export/make a new environment variable
+exit
+	exit the shell
+runas
+	become super root user
+
+
+
