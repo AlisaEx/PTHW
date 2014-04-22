@@ -1,16 +1,11 @@
-i = 0
-numbers = []
-
-while i < 6:
-    print "At the top i is %d" % i
-    numbers.append(i)
-
-    i += 1
-    print "Numbers now: ", numbers
-    print "At the bottom i is %d" % i
+def add_amount_to_list(num):
+    numbers = []
+    i = 0
+    while i < num:
+        numbers.append(i)
+        i += 1
+    print "The numbers are: %r" % numbers
+    return numbers
 
 
-print "The numbers: "
-
-for num in numbers:
-    print num
+add_amount_to_list(6)
