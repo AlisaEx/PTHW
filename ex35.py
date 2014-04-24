@@ -4,9 +4,9 @@ def gold_room():
     print "This room is full of gold. How much do you take?"
 
     next = raw_input("> ")
-    if "0" in next or "1" in next:
+    try:
         how_much = int(next)
-    else:
+    except ValueError:
         dead("Man, learn to type a number.")
 
     if how_much < 50:
@@ -53,7 +53,7 @@ def cthulu_room():
         cthulu_room()
 
 def dead(why):
-    print why, "Good job!"
+    print why, "\nGame Over."
     exit(0)
 
 def start():
