@@ -1,0 +1,137 @@
+#####KEYWORDS#####
+and
+    boolean operand. usually leans towards false. true and false == false
+del
+    delete target list from left to right
+from
+    used in the import statement. import 'module' from 'relative_module'
+not
+    negate statement. !True == False 
+while
+    loops until the condition is met. Can break is infinite loop.
+as
+
+elif
+    else if in JavaScript, another exception for if/else conditions
+global
+    declaration statement identifying variables as globals
+or
+    boolean operand. leans toward True. True or False == True
+with
+    
+assert
+else
+    default response in if/elif/else if all conditions return false
+if
+    conditional that checks and runs code if true, or other if false
+pass
+    null operation. nothing happens when it is executed. useful as placeholder
+yield
+    
+break
+except
+import
+    used to import modules for easier access (import blank from stuff)
+print
+    displays text in the terminal
+class
+    
+exec
+    dynamic execution of python code
+in
+    iterates over list and checks if value is present
+raise
+    used for raising errors (ie:     if something: raise error ("ERROR!")   )
+continue
+    continues with next iteration of a loop when called
+finally
+    always executed before leaving try regardless of whether try passed or failed
+is
+    checks if 2 values are the same object (different than equal to)
+return
+    returns a value. used to exit functions reguarly. def x(): return x
+def
+    define a function. def function_name(param)
+for
+    loop for a set range. for x in range(0,6)
+lambda
+    un-named function
+try
+    
+
+
+
+#####DATA TYPES#####
+True
+    boolean
+False
+    boolean
+None
+    null object where there is only one instance
+strings
+    "This is a string", "50", "strings!"
+numbers
+    33, 13, 300
+floats
+    33.0, 13.33, 300.99399
+lists
+    ["a", "list", "contains", "things", 39]
+
+
+#####STRING ESCAPES#####
+\\  -   backslash             (\)
+\'  -   single quote          (')
+\"  -   double quotes         (")
+\a  -   ASCII bell            (BEL)
+\b  -   ASCII backspace       (BS)
+\f  -   ASCII formfeed        (FF)
+\n  -   ASCII linefeed        (LF)
+\r  -   ASCII Carriage Return (CR)
+\t  -   ASCII Horizontal Tab  (TAB)
+\v  -   ASCII Vertical Tab    (VT)
+
+
+#####STRING FORMATS#####
+%d | %i  -   signed integer decimal
+%o | %u  -   unsigned octal | decimal
+%x | %X  -   unsigned hexidecimal (lowercase | uppercase)
+%e | %E  -   floating point exponential format (lowercase | uppercase)
+%f | %F  -   floating point decimal format
+%g | %G  -   floating point format. Uses exponential format if exponent > -4 or < precision, decimal format otherwise.
+%r | %s  -   String (converts python objects using repr() | str())
+%c       -   single character (accepts integer or single character string)
+%%       -   No argument is converted, results in "%" character in the result
+
+
+#####OPERATORS#####
++   -   addition
+-   -   subtraction/negative
+*   -   multiply
+**  -   exponent
+/   -   division (int)
+//  -   floor division (float)
+%   -   remainder
+<   -   less than
+>   -   greater than
+<=  -   less than or equal to
+>=  -   greater than or equal to
+==  -   is equal to
+!=  -   not equal to
+<>  -   not equal to
+( ) -   
+[ ] -   empty list
+{ } -   empty dictionary
+@   -   decorator expression???
+,   -   seperates values in a list
+:   -   seperates key values in a dictionary
+.   -   
+=   -   assign variable
+;   -
++=  -   add right side to left, and set that equal to variable on left. (ie: stuff = 0, stuff += 5, stuff = 5)
+-=  -   subtract right from left, and set equal to left variable
+*=  -   multiply right and left, and set equal to left variable
+/=  -   divide right from left, and set equal to left variable
+//= -   floor divide right from left, and set equal to left variable
+%=  -   set remainder from left/right to the left variable
+**= -   set the left variable to the result of the left to the power of the right
+

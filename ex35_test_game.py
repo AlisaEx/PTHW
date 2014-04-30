@@ -1,20 +1,32 @@
 from sys import exit
 
 def start(score):
-    print "You awake in a white room with no doors or windows."
-    print "To your left you see a chair."
-    print "Next to the chair, a cat is purring contently."
-    print "1. Pet the Cat."
-    print "2. Sit in the Chair."
+    print "You awake in a white room with no doors."
+    print "On your left you see a chair, with a cat purring contently on it."
+    print "To your right you see a window with curtains obscuing the view."
     next = raw_input("> ")
 
-    if next == "1":
-	score += 1
-        pet_cat(score)
-    elif next == "2":
-        sit_chair(score)
+    if next == "left":
+        check_chair(score)
+    elif next == "right":
+        open_window(score)
     else:
-        dead("You stand there staring at the cat and chair.", score)
+        dead("You stand there staring at nothing.", score)
+
+def check_chair(score):
+    print "That cat looks really cute sleeping on the chair."
+    next = raw_input("> ")
+
+    if next == "move cat":
+        print "The cat begruginly moves from it's spot on the chair."
+        score -= 100
+        sit_chair(score)
+    elif next == "pet cat":
+        score += 10
+        pet_cat(score)
+    else:
+        dead("Bro, what are you even doing?", score)
+
 
 
 def pet_cat(score):
@@ -24,21 +36,25 @@ def pet_cat(score):
         next = raw_input("> ")
     
         if next.lower() == "head" or next.lower() == "neck":
-            score += 1
+            score *= 2
             print "*purr purr purr*"
         elif next.lower() == "belly":
-            dead("The cat scratches your face off.", score)
+            dead("The cat scratches your face off.", score-5)
         else:
             print "I don't know if that is legal o.O"
 
 
 def sit_chair(score):
-    dead("The chair is incredibly comfortable.\nThe longer you sit in it,\nthe more your desire to get up is diminsihed.", score)
-
+    print "The chair is callling you in with it's comfort."
+    
+    next = raw_input ("> ")
+    if next == "sit in the chair":
+        dead("The chair is incredibly comfortable.\nThe longer you sit in it,\nthe more your desire to get up is diminsihed.", score)
+    
 
 def dead(why, score):
     print why, "You're dead.\nGame Over."
-    print "You scored %d out of 300 points!" % score
+    print "You scored %d out of 9001 points!" % score
     exit(0)
 
 start(0)
