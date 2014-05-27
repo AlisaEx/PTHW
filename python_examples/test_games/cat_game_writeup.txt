@@ -1,0 +1,35 @@
+You enter a pale white room with nothing but a window, table, and chair. To escape, you must kill the cat and jump out the window to your death.
+
+Room with no doors. To the left, cat sleeping on a chair. Next to the chair is a table. To the right is a locked window. Window Key is underneath the cat. Knife is under the table.
+Items
+    Chair
+    Cat
+    Window Key
+    Window
+    Note
+    Knife
+Scenes
+    Death
+        The player dies. Show score and witty comment.
+
+    Chair Area
+        Player must move cat to reveal key
+
+    Window Area
+        Player has to unlock. Then jump out to escape and win (by dying)
+
+    Table Area
+        Player flips to reveal knife.
+
+
+
+
+
+Actions
+    Examine
+    Pet
+    Jump
+    Use
+
+
+Actions = {

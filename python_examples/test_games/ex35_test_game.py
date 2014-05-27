@@ -4,6 +4,7 @@ def start(score):
     print "You awake in a white room with no doors."
     print "On your left you see a chair, with a cat purring contently on it."
     print "To your right you see a window with curtains obscuing the view."
+    print "Do you go left or right?"
     next = raw_input("> ")
 
     if next == "left":
@@ -15,6 +16,7 @@ def start(score):
 
 def check_chair(score):
     print "That cat looks really cute sleeping on the chair."
+    print "Will you move the cat or pet it?"
     next = raw_input("> ")
 
     if next == "move cat":
@@ -50,7 +52,15 @@ def sit_chair(score):
     next = raw_input ("> ")
     if next == "sit in the chair":
         dead("The chair is incredibly comfortable.\nThe longer you sit in it,\nthe more your desire to get up is diminsihed.", score)
-    
+    else:
+        dead("You stand there staring at the chair until you suddenly explode", score)
+
+def open_window(score):
+    print "Outside, there is a wonderful breeze\nAnd the sun shining brightly overhead\nCasting a warm glow on the room."
+    next = raw_input("> ")
+    if next == "open window":
+        
+
 
 def dead(why, score):
     print why, "You're dead.\nGame Over."

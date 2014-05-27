@@ -1,0 +1,48 @@
+GOTHONS FROM PLANET PERCAL #25 WRITE-UP
+
+
+"Aliens have invaded a space ship and our hero has to go through a maze of rooms defeating them so he can escape into an escape pod to the planet below. The game will be more like a Zork or Adventure type game with text outputs and funny ways to die. The game will involve an engine that runs a map full of rooms or scenes. Each room will print its own description when the player enters it and then tell the engine what room to tun next out of the map."
+
+
+SCENES
+    Death Scene
+        player dies. should be funny.
+    Central Corridor
+        starting point. has a Gothon the player must defeat with a joke
+    Laser Weapon Armory
+        hero gets neutron bomb. uses keypad to guess number.
+    The Bridge
+        battle with Gothon. hero places bomb.
+    Escape Pod
+        hero escapes. must guess correct escape pod
+
+LIST ALL NOUNS
+    alien
+    player
+    ship
+    maze
+    room
+    scene
+    gothon
+    escape pod
+    planet
+    map
+    engine
+    death
+    central corridor
+    laser weapon armory
+    the bridge
+
+CLASS HIERARCHY
+    Map
+        next_scene
+        opening_scene
+    Engine
+        play
+    Scene
+        enter
+        death
+        central corridor
+        laser weapon armory
+        the bridge
+        escape pod
