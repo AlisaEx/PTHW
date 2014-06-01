@@ -51,3 +51,87 @@ class CentralCorridor(Scene):
         else:
             print "DOES NOT COMPUTE!"
             return 'central_corridor'
+
+class LaserWeaponArmory(Scene):
+    def enter(self):
+        print """You do a dive roll into the Weapon Armory, crouch and scan the room\nfor more Gothons that might be hiding. It's dead quiet, too quiet.\nYou stand up and run to the far side of the room and find the \nneutron bomb in its container. There's a keypad lock on the box\nand you need the code to get the bomb out. If you get the code wrong 10 times then the lock closes forever and you can't\nget the bomb. The code is 3 digits long."""
+        code = "%d%d%d" % (randint(1,9), randint(1,9), randint(1,9))
+        guess = raw_input("[keypad]> ")
+        guesses = 0
+
+        while guess != code and guesses < 10:
+            print "BZZZZZZEDDD!"
+            guesses += 1
+            guess = raw_input("[keypad]> ")
+        if guess == code:
+            print """The container clicks open and the seal breaks, letting gas out.\nYou grab the neutron bomb and run as fast as you can to the\nbridge where you must place it in the right spot."""
+            return 'the_bridge'
+        else:
+            print """The lock buzzes one last time and then you hear a sickening\nmelting sound as the mechanism is fused together.\nYou decide to sit there, and finally the Gothons blow up the\nship from their ship and you die."""
+            return 'death'
+
+class TheBridge(Scene):
+    def enter(self):
+        print "You burst onto the Bridge with the netron destruct bomb"
+        print "under your arm and suprise 5 Gothons who are trying to"
+        print "take control of the ship. Each of them has a even unglier"
+        print "clown costume than the last. They haven't pulled their"
+        print "weapons out yet, as they see the active bomb under your"
+        print "arm and don't want to set it off."
+
+        action = raw_input("> ")
+
+        if action == "throw the bomb":
+            print """In a panic you throw the bomb at a group of Gothons\nand make a leap for the door. Right as you drop it a\nGothon shoots you right in the back killing you.\nAs you die you see another Gothon frantically try to disarm\nthe bomb. You die knowing they will probably blow up when\nit goes off."""
+            return 'death'
+
+        elif action == "slowly place the bomb":
+            print """You point your blaster at the bomb under your arm\nand the Gothons put their hands up and start to sweat.\nYou inch backward to the door, open it, and then carefully\nplace the bomb on the floor, pointing your blaster at it.\nYou then jump back through the door, punch the close button\nand blast the lock so the Gothons can't get out.\nNow that the bomb is placed you run to the escape pod to\nget off this tin can."""
+            return 'escape_pod'
+        else:
+            print "DOES NOT COMPUTE!"
+            return 'the_bridge'
+
+class EscapePod(Scene):
+    def enter(self):
+        print """You rush through the ship desperately trying to make it to\nthe escape pod before the whole ship explodes. It seems like\nhardly any Gothons are on the ship, so your run is clear of\ninterference. You get to the chamber with the escape pods, and\nnow need to pick one to take. Some of them could be damaged\nbut you don't have time to look. There's 5 pods, which on\ndo you take?"""
+
+        good_pod = randint(1,5)
+        guess = raw_input("[pod #]> ")
+
+        if int(guess) != good_pod:
+            print "You jump into pod %s and hit the eject button." % guess
+            print """The pod escapes out into the void of space, then]nimplodes as the hull ruptures, crushing your body\ninto jam jelly"""
+            return 'death'
+
+        else:
+            print "You jump into pdo %s and hit the eject button." % guess
+            print """The pod easily slides out into space heading to\ntheplanet below. As it dlies to the planet, you look back and see your ship implode like a\nbright star, taking out the Gothon ship at the same\ntime. You win!"""
+
+            return 'finished'
+
+
+class Map(object):
+    scenes = {
+        'central corridor': CentralCorridor(),
+        'laser_weapon_armory': LaserWeaponArmory(),
+        'the_bridge': TheBridge(),
+        'escape_pod': EscapePod(),
+        'death': Death()
+    }
+
+    def __init__(self, start_scene):
+        self.start_scene = start_scene
+        print "start_scene in __init__", self.start_scene
+
+    def next_scene(self, scene_name):
+        print "start_scene in next_scene"
+        val = Map.scenes.get(scene_name)
+        print "next_scene returns", val
+
+    def opening_scene(self):
+        return self.next_scene(self.start_scene)
+
+a_map = Map('central_corridor')
+a_game = Engine(a_map)
+a_game.play()
